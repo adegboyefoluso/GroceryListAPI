@@ -20,5 +20,6 @@ namespace GroceryList.Data
         {
             IngredientsList = new HashSet<IngredientList>();
         }
+        public int AmountOfIngredient { get; set; }
     }
 }
