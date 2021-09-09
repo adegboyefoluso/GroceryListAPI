@@ -31,7 +31,7 @@ namespace GroceryList.Services
                 {
                     var query = ctx
                                    .Ingredients
-                                   .SingleOrDefault(i=>i.Id==id);
+                                   .SingleOrDefault(i=>i.IngredientId==id);
                     if (query is null) return false;
                     entity.Ingredients.Add(query);
                 }
@@ -48,11 +48,11 @@ namespace GroceryList.Services
                                 .IngredientLists
                                 .Select(e => new IngredientListDetail
                                 {
-                                    IngredientListId = e.Id,
+                                    IngredientListId = e.IngredientListId,
                                     IngredientListName = e.Name,
                                     ListOfIngredientDetails = e.Ingredients.Select(p => new IngredientDetail()
                                     {
-                                        IngredientId = p.Id,
+                                        IngredientId = p.IngredientId,
                                         IngredientAmount = p.AmountOfIngredient,
                                         IngredientName = p.Name,
                                         IsOrganic = p.IsOrganic
@@ -69,15 +69,15 @@ namespace GroceryList.Services
             {
                 var query = ctx
                                 .IngredientLists
-                                .SingleOrDefault(e => e.Id == id);
+                                .SingleOrDefault(e => e.IngredientListId == id);
                 if (query is null) return null;
                 return new IngredientListDetail()
                 {
-                    IngredientListId = query.Id,
+                    IngredientListId = query.IngredientListId,
                     IngredientListName = query.Name,
                     ListOfIngredientDetails = query.Ingredients.Select(p => new IngredientDetail()
                     {
-                        IngredientId = p.Id,
+                        IngredientId = p.IngredientId,
                         IngredientAmount = p.AmountOfIngredient,
                         IngredientName = p.Name,
                         IsOrganic = p.IsOrganic
@@ -92,7 +92,7 @@ namespace GroceryList.Services
             {
                 var query = ctx
                                 .IngredientLists
-                                .SingleOrDefault(e => e.Id == model.IngredientListId);
+                                .SingleOrDefault(e => e.IngredientListId == model.IngredientListId);
                 if (query is null) return false;
                 query.Name = model.Name;
                return  ctx.SaveChanges() ==1;
@@ -108,7 +108,7 @@ namespace GroceryList.Services
             {
                 var query = ctx
                                 .IngredientLists
-                                .SingleOrDefault(e => e.Id == id);
+                                .SingleOrDefault(e => e.IngredientListId == id);
                 if (query is null) return false;
                 ctx.IngredientLists.Remove(query);
                 return ctx.SaveChanges() == 1;

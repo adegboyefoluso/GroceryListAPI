@@ -15,10 +15,7 @@ namespace GroceryList.Data
         public string Name { get; set; }
         public Guid OwnerId { get; set; }
         public string RecipeDescription { get; set; }
-
-        [ForeignKey(nameof(IngredientList))]
-        public int IngredientListId { get; set; }
-        public virtual IngredientList IngredientList { get; set; }
+        public virtual ICollection<RecipeIngredientList> RecipeIngredientLists { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
     }

@@ -89,6 +89,7 @@
     <Compile Include="IngredientList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeIngredientList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

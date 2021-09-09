@@ -8,7 +8,7 @@ namespace GroceryList.Model.IngredientListModel
 {
     public class IngredientListCreate
     {
-        public string Name { get; set; }
+        public string Name { get; set; } //Ingredientlist for Donut  //flour 1, sugar 2, oil 3
         public List<int> IngredientIds { get; set; }
 
     }
