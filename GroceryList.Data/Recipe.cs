@@ -15,7 +15,7 @@ namespace GroceryList.Data
         public string Name { get; set; }
         public Guid OwnerId { get; set; }
         public string RecipeDescription { get; set; }
-        public virtual ICollection<RecipeIngredientList> RecipeIngredientLists { get; set; }
+        public virtual ICollection<IngredientList> IngredientLists { get; set; } = new List<IngredientList>();
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
