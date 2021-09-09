@@ -114,5 +114,23 @@ namespace GroceryList.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        //Get Recipe By Ingredient List Id
+        public IEnumerable<RecipeList> GetRecipesByIngredientListId(int id)
+        {
+            using(var ctx= new ApplicationDbContext())
+            {
+                var recipes = ctx
+                                .IngredientLists
+                                .SingleOrDefault(e => e.IngredientListId == id).Recipes.
+                                Select(p => new RecipeList
+                                {
+                                    RecipeId = p.RecipeId,
+                                    Name = p.Name,
+                                    RecipeDescription = p.RecipeDescription
+                                }).ToList();
+
+                return recipes;              
+            }
+        }
     }
 }
