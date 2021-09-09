@@ -15,7 +15,6 @@ namespace GroceryList.Data
         public bool IsOrganic { get; set; }
         public virtual ICollection<IngredientList> IngredientsList { get; set; }
         public Guid OwnerId { get; set; }
-
         public Ingredient()
         {
             IngredientsList = new HashSet<IngredientList>();

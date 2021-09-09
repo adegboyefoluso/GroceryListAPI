@@ -37,7 +37,7 @@ namespace GroceryListAPI.Data
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<IngredientList> IngredientLists { get; set; }
-        public DbSet<RecipeIngredientList> RecipeIngredientLists { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
