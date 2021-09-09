@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IngredientListModel\IngredientDetail.cs" />
+    <Compile Include="IngredientListModel\IngredientListCreate.cs" />
+    <Compile Include="IngredientListModel\IngredientListDetail.cs" />
+    <Compile Include="IngredientListModel\IngredientListEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

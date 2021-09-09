@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GroceryList.Model.IngredientListModel
 {
-    class IngredientDetail
+    public class IngredientDetail
     {
+        public int IngredientId { get; set; }
+        public string IngredientName { get; set; }
+        public double IngredientAmount { get; set; }
+        public bool IsOrganic { get; set; }
     }
 }
