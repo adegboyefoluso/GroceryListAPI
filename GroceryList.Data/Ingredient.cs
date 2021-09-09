@@ -10,7 +10,7 @@ namespace GroceryList.Data
     public class Ingredient
     {
         [Key]
-        public int Id { get; set; }
+        public int IngredientId { get; set; }
         public string Name { get; set; }
         public bool IsOrganic { get; set; }
         public virtual ICollection<IngredientList> IngredientsList { get; set; }
