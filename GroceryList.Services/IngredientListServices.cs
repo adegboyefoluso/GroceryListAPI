@@ -20,6 +20,7 @@ namespace GroceryList.Services
         //Create IngredientList
         public bool CreateIngredientList(IngredientListCreate model)
         {
+            List<int> integers = new List<int>();
             var entity = new IngredientList()
             {
                 Name = model.Name,
@@ -32,7 +33,13 @@ namespace GroceryList.Services
                     var query = ctx
                                    .Ingredients
                                    .SingleOrDefault(i=>i.IngredientId==id);
-                    if (query is null) return false;
+                    if (query is null)
+                    {
+                        integers.Add(id);
+                        if (integers.Count == model.IngredientIds.Count)
+                            return false;
+                        continue;
+                    }
                     entity.Ingredients.Add(query);
                 }
                 ctx.IngredientLists.Add(entity);
