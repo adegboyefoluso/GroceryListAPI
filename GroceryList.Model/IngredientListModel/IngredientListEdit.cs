@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GroceryList.Model.IngredientListModel
 {
-    class IngredientListEdit
+    public class IngredientListEdit
     {
+        public int IngredientListId { get; set; }
+        public string Name { get; set; }
+        public List<int> IngredientIds { get; set; }
     }
 }
